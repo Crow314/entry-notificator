@@ -1,10 +1,10 @@
 package main
 
 import (
-	"gin-api-template/pkg/config"
-	"gin-api-template/pkg/database"
-	"gin-api-template/pkg/server"
-	"gin-api-template/pkg/util"
+	"entry-notificator/pkg/config"
+	"entry-notificator/pkg/database"
+	"entry-notificator/pkg/server"
+	"entry-notificator/pkg/util"
 	log "github.com/sirupsen/logrus"
 )
 
