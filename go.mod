@@ -1,4 +1,4 @@
-module gin-api-template
+module entry-notificator
 
 go 1.15
 

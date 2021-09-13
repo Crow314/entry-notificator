@@ -1,6 +1,6 @@
 #!/bin/bash
 
-module_name='gin-api-template'
+module_name='entry-notificator'
 
 cd "$(dirname $0)/../"
 touch ./build/package/development/secrets.env

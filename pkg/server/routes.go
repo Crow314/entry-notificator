@@ -1,6 +1,6 @@
 package server
 
-import "gin-api-template/internal/app/controllers"
+import "entry-notificator/internal/app/controllers"
 
 // setRoutes sets routing
 func (srv *server) setRoutes() {

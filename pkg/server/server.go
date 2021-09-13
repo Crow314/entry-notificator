@@ -1,8 +1,8 @@
 package server
 
 import (
-	"gin-api-template/pkg/config"
-	"gin-api-template/pkg/util"
+	"entry-notificator/pkg/config"
+	"entry-notificator/pkg/util"
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 	log "github.com/sirupsen/logrus"

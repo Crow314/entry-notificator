@@ -1,8 +1,8 @@
 package database
 
 import (
-	"gin-api-template/pkg/config"
-	"gin-api-template/pkg/util"
+	"entry-notificator/pkg/config"
+	"entry-notificator/pkg/util"
 	log "github.com/sirupsen/logrus"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"

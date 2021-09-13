@@ -1,4 +1,4 @@
-project_name='gin-api-template-development'
+project_name='entry-notificator-development'
 
 alias docker-compose="docker-compose -f deployments/development/docker-compose.yml -p $project_name"
 
