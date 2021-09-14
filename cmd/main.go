@@ -13,7 +13,7 @@ func main() {
 
 	config.Init(util.RetrieveEnv("APP_ENV", false))
 
-	database.Init(false)
+	database.Init()
 	defer database.Close()
 
 	server.Init()

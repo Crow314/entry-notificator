@@ -11,7 +11,7 @@ import (
 var db *gorm.DB
 
 // Init initializes database
-func Init(reset bool, models ...interface{}) {
+func Init() {
 	log.Info("Start to initialize database")
 
 	var err error
