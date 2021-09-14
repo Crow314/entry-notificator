@@ -33,5 +33,14 @@ services:
       - postgres-data:/var/lib/postgresql/data
 
 
+  migrate:
+    image: migrate/migrate:4
+    command: "-database postgres://postgres:postgres@postgres:5432/development?sslmode=disable -path /migrations up"
+    links:
+      - postgres
+    volumes:
+      - ../../db/migrations:/migrations
+
+
 volumes:
   postgres-data: {}
