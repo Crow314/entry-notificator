@@ -6,6 +6,7 @@ import (
 
 type User struct {
 	database.Model
+	Name      string
 	Cards     []Card
 	Receivers []Receiver
 }

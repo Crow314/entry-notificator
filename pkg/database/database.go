@@ -20,19 +20,6 @@ func Init(reset bool, models ...interface{}) {
 		log.Fatalf("Failed to connect database\n%v", err)
 	}
 
-	if reset {
-		err = db.Migrator().DropTable(models)
-		if err != nil {
-			log.Errorf("Failed to drop table\n%v", err)
-		}
-	}
-
-	// Migrate the schema
-	err = db.AutoMigrate(models...)
-	if err != nil {
-		log.Errorf("Failed to migrate\n%v", err)
-	}
-
 	log.Info("Initializing database has completed")
 }
 

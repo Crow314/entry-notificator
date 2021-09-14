@@ -8,6 +8,7 @@ alias stop="docker-compose stop"
 alias down="docker-compose down"
 
 alias migrate="docker-compose run --rm migrate"
+alias migrate-run="migrate -database postgres://postgres:postgres@postgres:5432/development?sslmode=disable -path /migrations"
 
 alias run="docker-compose run --rm"
 alias exec="docker-compose exec"
