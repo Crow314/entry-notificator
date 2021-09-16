@@ -93,3 +93,18 @@ func CreateAttendance(ctx *gin.Context) {
 
 	ctx.JSON(http.StatusOK, attendance)
 }
+
+func IndexAttendances(ctx *gin.Context) {
+	db := database.DB()
+
+	var attendances []models.Attendance
+	result := db.Order("updated_at desc").Limit(100).Find(&attendances)
+	err := result.Error
+	if err != nil {
+		log.Warn(err.Error())
+		ctx.JSON(http.StatusInternalServerError, gin.H{"message": "Server error"})
+		return
+	}
+
+	ctx.JSON(http.StatusOK, gin.H{"data": attendances})
+}
