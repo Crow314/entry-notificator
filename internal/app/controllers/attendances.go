@@ -15,7 +15,7 @@ import (
 func CreateAttendance(ctx *gin.Context) {
 	db := database.DB()
 
-	card := models.Card{}
+	var card models.Card
 	err := ctx.Bind(&card)
 	if err != nil {
 		ctx.JSON(http.StatusBadRequest, gin.H{"message": "Invalid format"})
@@ -28,7 +28,7 @@ func CreateAttendance(ctx *gin.Context) {
 		ctx.JSON(http.StatusBadRequest, gin.H{"message": "Invalid url format"})
 		return
 	}
-	place := models.Place{}
+	var place models.Place
 	result := db.First(&place, placeId)
 	err = result.Error
 	if err != nil {
@@ -55,7 +55,7 @@ func CreateAttendance(ctx *gin.Context) {
 	}
 
 	// Retrieve Child
-	child := models.Child{}
+	var child models.Child
 	result = db.First(&child, card.ChildID)
 	err = result.Error
 	if err != nil {
@@ -65,7 +65,7 @@ func CreateAttendance(ctx *gin.Context) {
 	}
 
 	// Retrieve whether or not the child is stay at
-	newestAttendance := models.Attendance{}
+	var newestAttendance models.Attendance
 	isEntered := false
 	result = db.Where("child_id = ? AND place_id = ? AND updated_at >= ?", child.ID, placeId, now.BeginningOfDay()).Order("updated_at desc").First(&newestAttendance)
 	err = result.Error

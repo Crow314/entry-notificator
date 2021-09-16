@@ -11,7 +11,7 @@ import (
 func CreateChild(ctx *gin.Context) {
 	db := database.DB()
 
-	child := models.Child{}
+	var child models.Child
 	err := ctx.Bind(&child)
 	if err != nil {
 		ctx.JSON(http.StatusBadRequest, gin.H{"message": "Invalid format"})

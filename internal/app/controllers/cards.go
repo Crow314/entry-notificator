@@ -11,7 +11,7 @@ import (
 func CreateCard(ctx *gin.Context) {
 	db := database.DB()
 
-	card := models.Card{}
+	var card models.Card
 	err := ctx.Bind(&card)
 	if err != nil {
 		ctx.JSON(http.StatusBadRequest, gin.H{"message": "Invalid format"})
