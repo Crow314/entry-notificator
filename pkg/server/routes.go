@@ -12,4 +12,5 @@ func (srv *server) setRoutes() {
 	engine.POST("/cards", controllers.CreateCard)
 	engine.POST("/places/:place_id/attendances", controllers.CreateAttendance)
 	engine.GET("/attendances", controllers.IndexAttendances)
+	engine.POST("/supporters", controllers.CreateSupporter)
 }
