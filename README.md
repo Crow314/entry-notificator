@@ -42,9 +42,18 @@ Register id card for the child
 }
 ```
 
-#### PUT `/cards/:id/scan`
+### Attendance
+
+#### POST `/places/:place_id/attendances`
 
 Change entry status of the child
+
+```json
+{
+  "token": "0101020c2927e5df",
+  "token_type": "FeliCa"
+}
+```
 
 ### Supporter
 

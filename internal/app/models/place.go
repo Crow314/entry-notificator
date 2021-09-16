@@ -6,5 +6,6 @@ import (
 
 type Place struct {
 	database.Model
-	Name string `json:"name"`
+	Name        string `json:"name"`
+	Attendances []Attendance
 }
