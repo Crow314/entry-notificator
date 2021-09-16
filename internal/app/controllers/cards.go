@@ -8,17 +8,17 @@ import (
 	"net/http"
 )
 
-func CreateChild(ctx *gin.Context) {
+func CreateCard(ctx *gin.Context) {
 	db := database.DB()
 
-	child := models.Child{}
-	err := ctx.Bind(&child)
+	card := models.Card{}
+	err := ctx.Bind(&card)
 	if err != nil {
 		ctx.JSON(http.StatusBadRequest, gin.H{"message": "Invalid format"})
 		return
 	}
 
-	result := db.Create(&child)
+	result := db.Create(&card)
 	err = result.Error
 	if err != nil {
 		log.Warn(err.Error())
@@ -26,5 +26,5 @@ func CreateChild(ctx *gin.Context) {
 		return
 	}
 
-	ctx.JSON(http.StatusOK, child)
+	ctx.JSON(http.StatusOK, card)
 }

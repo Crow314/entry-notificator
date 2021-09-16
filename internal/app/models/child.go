@@ -12,4 +12,5 @@ type Child struct {
 	BirthDate  pgtype.Date  `json:"birth_date"`
 	Address    ChildAddress `json:"address"`
 	Contact    ChildContact `json:"contact"`
+	Cards      []Card       `json:"cards"`
 }

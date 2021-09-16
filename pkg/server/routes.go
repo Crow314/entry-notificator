@@ -9,4 +9,5 @@ func (srv *server) setRoutes() {
 	engine.GET("/ping", controllers.HealthCheckController)
 
 	engine.POST("/children", controllers.CreateChild)
+	engine.POST("/cards", controllers.CreateCard)
 }
