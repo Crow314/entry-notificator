@@ -42,7 +42,7 @@ Register id card for the child
 }
 ```
 
-#### PUT `/card/:id/scan`
+#### PUT `/cards/:id/scan`
 
 Change entry status of the child
 
