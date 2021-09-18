@@ -5,6 +5,7 @@ import (
 	"entry-notificator/pkg/database"
 	"github.com/gin-gonic/gin"
 	log "github.com/sirupsen/logrus"
+	"gopkg.in/go-playground/validator.v9"
 	"net/http"
 )
 
@@ -15,6 +16,12 @@ func CreateChild(ctx *gin.Context) {
 	err := ctx.Bind(&child)
 	if err != nil {
 		ctx.JSON(http.StatusBadRequest, gin.H{"message": "Invalid format"})
+		return
+	}
+
+	err = validator.New().Struct(child)
+	if err != nil {
+		ctx.JSON(http.StatusBadRequest, gin.H{"message": "Validation failed"})
 		return
 	}
 
